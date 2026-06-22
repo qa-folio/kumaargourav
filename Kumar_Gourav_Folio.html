@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kumaar Gourav — Senior QA Analyst | BFSI Domain</title>
+<meta name="description" content="Senior Quality Analyst with 5+ years BFSI domain experience. LOS/LMS testing for RBL Bank, AU Small Finance Bank, IndusInd Bank.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --navy-light: #1d3461;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --teal: #2dd4bf;
+    --white: #f0f4f8;
+    --muted: #8892a4;
+    --card-bg: #0d1f3c;
+    --border: #1e3a5f;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10, 22, 40, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6vw; height: 60px;
+  }
+  .nav-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--gold); letter-spacing: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* SECTIONS */
+  section { padding: 90px 6vw; }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 3px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 800; line-height: 1.15; color: var(--white);
+    margin-bottom: 48px;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.18;
+  }
+  .hero-glow {
+    position: absolute; top: 15%; right: -10%;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 3px; color: var(--teal);
+    text-transform: uppercase; margin-bottom: 18px;
+  }
+  .hero-name {
+    font-size: clamp(38px, 7vw, 72px);
+    font-weight: 800; line-height: 1.05;
+    color: var(--white); margin-bottom: 10px;
+  }
+  .hero-name span { color: var(--gold); }
+  .hero-role {
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--muted); font-weight: 400; margin-bottom: 30px;
+    max-width: 600px;
+  }
+  .hero-badges {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px;
+  }
+  .badge {
+    padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+    border: 1px solid var(--border); color: var(--muted);
+    background: var(--card-bg);
+  }
+  .badge.highlight { border-color: var(--gold); color: var(--gold); }
+  .badge.teal { border-color: var(--teal); color: var(--teal); }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 13px 28px; background: var(--gold); color: var(--navy);
+    font-weight: 700; font-size: 13px; border: none; border-radius: 6px;
+    cursor: pointer; text-decoration: none; display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    padding: 13px 28px; background: transparent; color: var(--white);
+    font-weight: 600; font-size: 13px;
+    border: 1px solid var(--border); border-radius: 6px;
+    cursor: pointer; text-decoration: none; display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* STATS BAR */
+  #stats {
+    padding: 40px 6vw;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 24px;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-size: 36px; font-weight: 800; color: var(--gold);
+    font-family: 'JetBrains Mono', monospace; line-height: 1;
+  }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; letter-spacing: 0.5px; }
+
+  /* ABOUT */
+  #about .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+    align-items: start;
+  }
+  .about-text { color: #b0bac8; line-height: 1.8; font-size: 15px; }
+  .about-text p { margin-bottom: 16px; }
+  .about-text strong { color: var(--white); }
+  .skill-category { margin-bottom: 28px; }
+  .skill-cat-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+  }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+  .pill {
+    padding: 4px 12px; border-radius: 4px; font-size: 12px;
+    background: var(--navy-light); color: var(--white);
+    border: 1px solid var(--border); font-weight: 500;
+  }
+
+  /* PROJECTS / CLIENTS */
+  #projects .projects-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .project-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 28px; position: relative;
+    overflow: hidden; transition: border-color 0.25s, transform 0.2s;
+  }
+  .project-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .project-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .project-card:hover::before { transform: scaleX(1); }
+  .project-bank {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 8px;
+  }
+  .project-title { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+  .project-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+  .tag {
+    font-size: 11px; padding: 3px 10px; border-radius: 3px;
+    background: rgba(201,168,76,0.1); color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.25); font-weight: 600;
+  }
+  .project-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .metric-box {
+    background: var(--navy); border: 1px solid var(--border);
+    border-radius: 6px; padding: 10px 12px;
+  }
+  .metric-val { font-size: 20px; font-weight: 800; color: var(--white); font-family: 'JetBrains Mono', monospace; }
+  .metric-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  /* QA PROCESS */
+  #process { background: var(--card-bg); }
+  .process-flow {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0; position: relative;
+  }
+  .process-step {
+    padding: 28px 20px; text-align: center; position: relative;
+    border-right: 1px solid var(--border);
+  }
+  .process-step:last-child { border-right: none; }
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px; font-weight: 800; color: var(--border); line-height: 1;
+    margin-bottom: 8px;
+  }
+  .step-name { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .step-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .step-active .step-num { color: var(--gold); }
+  .step-active .step-name { color: var(--gold); }
+
+  /* TOOLS */
+  #tools .tools-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .tool-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .tool-card:hover { border-color: var(--teal); }
+  .tool-icon { font-size: 26px; margin-bottom: 10px; }
+  .tool-name { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .tool-desc { font-size: 12px; color: var(--muted); }
+  .tool-bar-wrap { margin-top: 10px; background: var(--navy); border-radius: 3px; height: 4px; overflow: hidden; }
+  .tool-bar { height: 100%; background: linear-gradient(90deg, var(--gold), var(--teal)); border-radius: 3px; transition: width 1s ease; }
+
+  /* CONTACT */
+  #contact { background: var(--card-bg); border-top: 1px solid var(--border); }
+  .contact-box {
+    max-width: 600px; margin: 0 auto; text-align: center;
+  }
+  .contact-title { font-size: 36px; font-weight: 800; color: var(--white); margin-bottom: 14px; }
+  .contact-title span { color: var(--gold); }
+  .contact-sub { color: var(--muted); margin-bottom: 36px; font-size: 15px; }
+  .contact-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .contact-link {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--navy);
+    color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-link:hover { border-color: var(--gold); color: var(--gold); }
+  .availability-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(45,212,191,0.1); border: 1px solid rgba(45,212,191,0.3);
+    color: var(--teal); padding: 6px 16px; border-radius: 20px;
+    font-size: 12px; font-weight: 600; margin-bottom: 28px;
+  }
+  .dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:0.5; transform:scale(0.8); } }
+
+  /* FOOTER */
+  footer {
+    padding: 24px 6vw; text-align: center;
+    font-size: 12px; color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    #about .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .process-flow { grid-template-columns: 1fr 1fr; }
+    .process-step { border-right: none; border-bottom: 1px solid var(--border); }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">&lt;QA/&gt;</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#process">Process</a>
+    <a href="#tools">Tools</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div style="position:relative; z-index:1;">
+    <div class="hero-eyebrow">Available for Remote Opportunities</div>
+    <div class="hero-name">
+      Kumaar Gourav<br>
+      <span>Quality Analyst.</span>
+    </div>
+    <div class="hero-role">
+      Senior QA Analyst with 5+ years ensuring zero defects reach production in India's leading banks. BFSI domain specialist in Loan Origination & Management Systems.
+    </div>
+    <div class="hero-badges">
+      <span class="badge highlight">BFSI Domain Expert</span>
+      <span class="badge teal">🏦 RBL Bank</span>
+      <span class="badge teal">🏦 AU Small Finance</span>
+      <span class="badge teal">🏦 IndusInd Bank</span>
+      <span class="badge">LOS / LMS Testing</span>
+      <span class="badge">SQL Server</span>
+      <span class="badge">Jira</span>
+      <span class="badge">Remote Ready ✓</span>
+    </div>
+    <div class="hero-cta">
+      <a href="mailto:work.kumargourav@gmail.com" class="btn-primary">📩 Hire Me</a>
+      <a href="#projects" class="btn-outline">View My Work →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num" data-target="5">0</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="3">0</div>
+      <div class="stat-label">Major Bank Clients</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="3500">0</div>
+      <div class="stat-label">Test Cases Executed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="600">0</div>
+      <div class="stat-label">Defects Managed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="0">0</div>
+      <div class="stat-label" style="color:var(--teal);">Critical Production Bugs</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About Me</div>
+  <div class="section-title">Quality is not<br>an act — it's a habit.</div>
+  <div class="about-grid reveal">
+    <div>
+      <div class="about-text">
+        <p>I'm a <strong>Senior Quality Analyst</strong> at Aadiswan Info Consultants Pvt. Ltd., where I've spent 5+ years ensuring that banking software deployed to major Indian financial institutions works flawlessly — every release, every time.</p>
+        <p>My domain is <strong>BFSI (Banking, Financial Services & Insurance)</strong>. I specialise in testing <strong>Loan Origination Systems (LOS)</strong> and <strong>Loan Management Systems (LMS)</strong> — the critical infrastructure that powers how banks process, approve, and manage loans worth crores.</p>
+        <p>I've worked directly with stakeholders at <strong>RBL Bank, AU Small Finance Bank, and IndusInd Bank</strong> — conducting UAT sessions, managing defect cycles, and ensuring every module meets both business and regulatory requirements.</p>
+        <p>Currently seeking a <strong>100% remote Senior QA role</strong> in a fintech or banking technology company where I can bring this domain expertise to a team that values precision.</p>
+      </div>
+    </div>
+    <div>
+      <div class="skill-category">
+        <div class="skill-cat-label">Testing Types</div>
+        <div class="skill-pills">
+          <span class="pill">Functional</span>
+          <span class="pill">Regression</span>
+          <span class="pill">UAT</span>
+          <span class="pill">SIT</span>
+          <span class="pill">Integration</span>
+          <span class="pill">Smoke</span>
+          <span class="pill">Sanity</span>
+          <span class="pill">System Testing</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-label">Domain Knowledge</div>
+        <div class="skill-pills">
+          <span class="pill">BFSI</span>
+          <span class="pill">Loan Origination (LOS)</span>
+          <span class="pill">Loan Management (LMS)</span>
+          <span class="pill">Credit Administration</span>
+          <span class="pill">Early Warning Signal</span>
+          <span class="pill">Underwriting</span>
+          <span class="pill">Covenant Management</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-label">Tools & Tech</div>
+        <div class="skill-pills">
+          <span class="pill">Jira</span>
+          <span class="pill">SQL Server</span>
+          <span class="pill">MS Excel</span>
+          <span class="pill">Agile / Scrum</span>
+          <span class="pill">STLC</span>
+          <span class="pill">SDLC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background: var(--navy-mid);">
+  <div class="section-label">Client Work</div>
+  <div class="section-title">Banking projects<br>I've delivered quality on.</div>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-bank">🏦 RBL Bank</div>
+      <div class="project-title">CredPro LOS — Loan Origination System</div>
+      <div class="project-desc">End-to-end QA for RBL Bank's loan origination platform. Tested underwriting workflows, document management, credit decisioning, and pricing modules across multiple loan products.</div>
+      <div class="project-tags">
+        <span class="tag">LOS</span>
+        <span class="tag">Functional Testing</span>
+        <span class="tag">UAT</span>
+        <span class="tag">SQL Validation</span>
+        <span class="tag">Regression</span>
+      </div>
+      <div class="project-metrics">
+        <div class="metric-box">
+          <div class="metric-val">400+</div>
+          <div class="metric-lbl">Test Cases</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">0</div>
+          <div class="metric-lbl">Prod Defects</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-bank">🏦 AU Small Finance Bank</div>
+      <div class="project-title">CredPro LMS — Loan Management System</div>
+      <div class="project-desc">Quality assurance for loan management lifecycle covering disbursement, repayment, covenant monitoring, and third-party API integrations for AU Small Finance Bank.</div>
+      <div class="project-tags">
+        <span class="tag">LMS</span>
+        <span class="tag">Integration Testing</span>
+        <span class="tag">API Validation</span>
+        <span class="tag">SIT</span>
+        <span class="tag">Jira</span>
+      </div>
+      <div class="project-metrics">
+        <div class="metric-box">
+          <div class="metric-val">450+</div>
+          <div class="metric-lbl">Test Cases</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">Agile</div>
+          <div class="metric-lbl">Methodology</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-bank">🏦 IndusInd Bank</div>
+      <div class="project-title">CAD & EWS — Credit Administration & Early Warning</div>
+      <div class="project-desc">Testing Credit Administration & Documentation (CAD) and Early Warning Signal (EWS) modules — regulatory-compliance critical systems for identifying at-risk accounts in IndusInd Bank's portfolio.</div>
+      <div class="project-tags">
+        <span class="tag">CAD</span>
+        <span class="tag">EWS</span>
+        <span class="tag">Compliance Testing</span>
+        <span class="tag">SQL Server</span>
+        <span class="tag">UAT</span>
+      </div>
+      <div class="project-metrics">
+        <div class="metric-box">
+          <div class="metric-val">350+</div>
+          <div class="metric-lbl">Test Cases</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">RBI</div>
+          <div class="metric-lbl">Compliance</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-label">My QA Process</div>
+  <div class="section-title">How I ensure zero<br>defects reach production.</div>
+  <div class="process-flow reveal">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-name">Requirement Analysis</div>
+      <div class="step-desc">Study BRD, FRD with BAs. Identify testable requirements and ambiguities.</div>
+    </div>
+    <div class="process-step step-active">
+      <div class="step-num">02</div>
+      <div class="step-name">Test Planning</div>
+      <div class="step-desc">Define scope, approach, tools, schedule. Create Test Plan document.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-name">Test Design</div>
+      <div class="step-desc">Write test cases, scenarios covering positive, negative, boundary flows.</div>
+    </div>
+    <div class="process-step step-active">
+      <div class="step-num">04</div>
+      <div class="step-name">Execution</div>
+      <div class="step-desc">Execute test cases, log defects in Jira with severity & priority.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">05</div>
+      <div class="step-name">Defect Cycle</div>
+      <div class="step-desc">Track bug lifecycle, coordinate re-testing, ensure closure before release.</div>
+    </div>
+    <div class="process-step step-active">
+      <div class="step-num">06</div>
+      <div class="step-name">Sign-off</div>
+      <div class="step-desc">Test Summary Report, UAT sign-off with client stakeholders.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" style="background: var(--navy-mid);">
+  <div class="section-label">Tools & Expertise</div>
+  <div class="section-title">My testing toolkit.</div>
+  <div class="tools-grid reveal">
+    <div class="tool-card">
+      <div class="tool-icon">🐛</div>
+      <div class="tool-name">Jira</div>
+      <div class="tool-desc">Defect lifecycle management, sprint tracking, bug reporting & triage</div>
+      <div class="tool-bar-wrap"><div class="tool-bar" style="width:90%"></div></div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🗄️</div>
+      <div class="tool-name">SQL Server</div>
+      <div class="tool-desc">Backend data validation, query writing, loan data reconciliation</div>
+      <div class="tool-bar-wrap"><div class="tool-bar" style="width:78%"></div></div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🔍</div>
+      <div class="tool-name">Manual Testing</div>
+      <div class="tool-desc">Functional, regression, UAT, SIT, integration, smoke & sanity</div>
+      <div class="tool-bar-wrap"><div class="tool-bar" style="width:95%"></div></div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">📋</div>
+      <div class="tool-name">Test Documentation</div>
+      <div class="tool-desc">Test Plans, Test Cases, Defect Reports, Test Summary Reports</div>
+      <div class="tool-bar-wrap"><div class="tool-bar" style="width:92%"></div></div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🏦</div>
+      <div class="tool-name">BFSI Domain</div>
+      <div class="tool-desc">LOS, LMS, CAD, EWS, underwriting, covenant, lending products</div>
+      <div class="tool-bar-wrap"><div class="tool-bar" style="width:93%"></div></div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">⚡</div>
+      <div class="tool-name">Agile / Scrum</div>
+      <div class="tool-desc">Sprint planning, daily standups, retrospectives, sprint delivery</div>
+      <div class="tool-bar-wrap"><div class="tool-bar" style="width:82%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-box">
+    <div class="availability-badge">
+      <span class="dot"></span> Available for Remote Roles
+    </div>
+    <div class="contact-title">Let's work<br><span>together.</span></div>
+    <div class="contact-sub">
+      Looking for a Senior QA Analyst with deep BFSI domain expertise and a track record across India's top banks? Let's talk.
+    </div>
+    <div class="contact-links">
+      <a href="mailto:work.kumargourav@gmail.com" class="contact-link">📧 work.kumargourav@gmail.com</a>
+      <a href="tel:+919117551975" class="contact-link">📞 +91-9117551975</a>
+      <a href="https://www.linkedin.com/in/kumaargourav-sqa" target="_blank" class="contact-link">💼 LinkedIn</a>
+      <a href="https://docs.google.com/document/d/1mV-27mt9kp4cFuYMU8sYhCDxvgXSO-av/edit?usp=sharing&ouid=109834927785154088051&rtpof=true&sd=true" class="contact-link">📄 Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built by Kumaar Gourav · Senior QA Analyst · BFSI Domain · <span style="color:var(--gold)">Open to Remote</span></p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Counter animation
+  function animateCounter(el, target, duration=1800) {
+    let start = null;
+    const step = ts => {
+      if(!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(ease * target);
+      if(progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+  }
+
+  const statsObserver = new IntersectionObserver(entries => {
+    if(entries[0].isIntersecting) {
+      document.querySelectorAll('[data-target]').forEach(el => {
+        animateCounter(el, parseInt(el.dataset.target));
+      });
+      statsObserver.disconnect();
+    }
+  }, { threshold: 0.5 });
+  statsObserver.observe(document.getElementById('stats'));
+</script>
+</body>
+</html>
